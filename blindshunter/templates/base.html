@@ -17,16 +17,16 @@
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="">Companies</a></li>
-                <li><a href="">Reviews</a></li>
+                <li><a href="{{ url_for('companies') }}">Companies</a></li>
+                <li><a href="{{ url_for('reviews') }}">Reviews</a></li>
               </ul>
             </div>
           </nav>
         
           <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="">Companies</a></li>
-            <li><a href="">Reviews</a></li>
+            <li><a href="{{ url_for('companies') }}">Companies</a></li>
+            <li><a href="{{ url_for('reviews') }}">Reviews</a></li>
           </ul>
     </header>
 
