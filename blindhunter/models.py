@@ -5,10 +5,10 @@ class Company(db.Model):
     # schema for the Company model
     id = db.Column(db.Integer, primary_key=True)
     company_name = db.Column(db.String(50), unique=True, nullable=False)
-    blinds_description = db.Column(db.Text, nullable=False)
+    blinds_sold = db.Column(db.Text, nullable=False)
     contact_number = db.Column(db.Integer, nullable=False)
     uk_area = db.Column(db.String(25), unique=True, nullable=False)
-    reviews = db.relationship("Review", backref="category", cascade="all, delete", lazy=True)
+    reviews = db.relationship("Review", backref="company", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         return self.company_name
