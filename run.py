@@ -1,5 +1,5 @@
 import os
-from blindshunter import app
+from blindhunter import app
 
 
 if __name__ == "__main__":
