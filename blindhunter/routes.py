@@ -34,6 +34,14 @@ def edit_company(company_id):
     return render_template("edit_company.html", company=company)
 
 
+@app.route("/delete_company/<int:company_id>", methods=["GET", "POST"])
+def delete_company(company_id):
+    company = Company.query.get_or_404(company_id)
+    db.session.delete(company)
+    db.session.commit()
+    return redirect(url_for("companies"))
+
+
 @app.route("/reviews")
 def reviews():
     return render_template("reviews.html")
