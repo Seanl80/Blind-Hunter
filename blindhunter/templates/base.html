@@ -13,7 +13,7 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-              <a href="{{ url_for('home') }}" class="brand-logo">Blinds Hunter</a>
+              <a href="{{ url_for('home') }}" class="brand-logo">Blind Hunter</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -29,6 +29,17 @@
             <li><a href="{{ url_for('reviews') }}">Reviews</a></li>
           </ul>
     </header>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="container col s12 center-align">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 
     <main class="container">
     {% block content %}
