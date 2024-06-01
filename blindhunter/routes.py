@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, url_for, session
+from sqlalchemy import desc
 from blindhunter import app, db
 from blindhunter.models import Company, Review
 
@@ -21,11 +22,10 @@ def add_company():
     if request.method == "POST":
         company = Company(
             company_name=request.form.get("company_name"),
-            address=request.form.get("address"),
             location=request.form.get("location"),
+            area=request.form.get("area"),
             email=request.form.get("email"),
             phone=request.form.get("phone"),
-            blinds=request.form.get("blinds")
         )
         db.session.add(company)
         db.session.commit()
@@ -53,14 +53,19 @@ def delete_company(company_id):
 
 @app.route("/reviews")
 def reviews():
-    reviews = list(Review.query.order_by(Review.review_name).all())
+    reviews = list(Review.query.order_by(desc(Review.date)).all())
     return render_template("reviews.html", reviews=reviews)
 
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
-        review = Review(review_name=request.form.get("review_name"))
+        review = Review(
+            review_name=request.form.get("review_name"),
+            company_id=request.form.get("company_id"),
+            date=request.form.get("date"),
+            description=request.form.get("description"),
+            )
         db.session.add(review)
         db.session.commit()
         return redirect(url_for("reviews"))
