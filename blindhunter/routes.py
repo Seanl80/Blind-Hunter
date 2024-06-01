@@ -76,7 +76,7 @@ def add_review():
 def edit_review(review_id):
     review = Review.query.get_or_404(review_id)
     if request.method == 'POST':
-        review.content = request.form['content']
+        review.review_name = request.form.get("review_name")
         db.session.commit()
         return redirect('reviews')
     return render_template('edit_review.html', review=review)
@@ -88,3 +88,42 @@ def delete_review(review_id):
     db.session.delete(review)
     db.session.commit()
     return redirect('reviews')
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        hashed_password = generate_password_hash(password, method='sha256')
+        new_user = User(username=username, password=hashed_password, role='user')
+        
+        db.session.add(new_user)
+        db.session.commit()
+        
+        flash('Registration successful! Please log in.', 'success')
+        return redirect(url_for('login'))
+    return render_template('register.html')
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        user = User.query.filter_by(username=username).first()
+        if user and check_password_hash(user.password, password):
+            session['user_id'] = user.id
+            session['username'] = user.username
+            session['role'] = user.role
+            flash('Login successful!', 'success')
+            return redirect(url_for('companies'))
+        else:
+            flash('Invalid username or password', 'danger')
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('home.html')
