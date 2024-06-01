@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, session
 from sqlalchemy import desc
 from blindhunter import app, db
-from blindhunter.models import Company, Review
+from blindhunter.models import Company, Review, User
 
 from werkzeug.security import generate_password_hash, check_password_hash
 
