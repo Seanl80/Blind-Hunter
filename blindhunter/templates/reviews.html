@@ -16,7 +16,12 @@
     <div class="col s12 m6 l3">
         <div class="card light-blue darken-4 center-align">
             <div class="card-content white-text">
-                <span class="card-title">{{ review.review_name }}</span>
+                <li>
+                    <h3>{{ review.review_name }}</h3>
+                    <p>{{  company.company_id }}</p>
+                    <p>Date: {{ review.address }}</p>
+                    <p>Description: {{ review.location }}</p>
+                </li>
             </div>
             <div class="card-action">
                 <a href="{{ url_for('edit_review', review_id=review.id) }}" class="btn green accent-4">Edit</a>
