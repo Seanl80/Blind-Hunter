@@ -13,6 +13,10 @@ def home():
 
 @app.route("/companies")
 def companies():
+    if 'user_id' not in session:
+        flash('Please log in to view this page', 'warning')
+        return redirect(url_for('home'))
+
     companies = list(Company.query.order_by(Company.company_name).all())
     return render_template("companies.html", companies=companies)
 
@@ -95,6 +99,13 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+
+        # Check if the username already exists
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            flash('Username already exists. Please choose a different one.', 'danger')
+            return redirect(url_for('register'))
+
         hashed_password = generate_password_hash(password, method='sha256')
         new_user = User(username=username, password=hashed_password, role='user')
         

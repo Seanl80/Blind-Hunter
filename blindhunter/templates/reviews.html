@@ -23,6 +23,7 @@
                     <p>Description: {{ review.location }}</p>
                 </li>
             </div>
+            {% if session.role == 'admin' or session.user_id == review.user_id %}
             <div class="card-action">
                 <a href="{{ url_for('edit_review', review_id=review.id) }}" class="btn green accent-4">Edit</a>
                 <a href="#modal-{{ review.id }}" class="btn red modal-trigger">Delete</a>
@@ -39,6 +40,7 @@
                     </div>
                 </div>
             </div>
+            % endif %
         </div>
     </div>
     {% endfor %}
