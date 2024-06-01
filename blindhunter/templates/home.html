@@ -21,7 +21,7 @@
     <div class="col s12 center-align">
         {% if session.username %}
         <p>Hello, {{ session.username }}!</p>
-        <a href="{{ url_for('logout') }}" class="btn green accent-4">Logout</a>
+        <a href="{{ url_for('logout') }}" class="btn green accent-4">Sign Out</a>
         {% else %}   
         <a href="{{ url_for('register') }}" class="btn green accent-4">
         Register</a>
