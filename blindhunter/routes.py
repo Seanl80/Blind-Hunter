@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, session
+from flask import render_template, request, redirect, url_for, session, flash
 from sqlalchemy import desc
 from blindhunter import app, db
 from blindhunter.models import Company, Review, User
@@ -107,7 +107,7 @@ def register():
             return redirect(url_for('register'))
 
         hashed_password = generate_password_hash(password, method='sha256')
-        new_user = User(username=username, password=hashed_password, role='user')
+        new_user = User(username=username, password=hashed_password)
         
         db.session.add(new_user)
         db.session.commit()
@@ -126,7 +126,6 @@ def login():
         if user and check_password_hash(user.password, password):
             session['user_id'] = user.id
             session['username'] = user.username
-            session['role'] = user.role
             flash('Login successful!', 'success')
             return redirect(url_for('companies'))
         else:
@@ -137,4 +136,4 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect('home.html')
+    return redirect('/')
