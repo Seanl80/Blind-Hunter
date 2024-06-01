@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, session
 from blindhunter import app, db
-from blindhunter.models import Company, Detail, Review
+from blindhunter.models import Company, Review
 
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -19,7 +19,14 @@ def companies():
 @app.route("/add_company", methods=["GET", "POST"])
 def add_company():
     if request.method == "POST":
-        company = Company(company_name=request.form.get("company_name"))
+        company = Company(
+            company_name=request.form.get("company_name"),
+            address=request.form.get("address"),
+            location=request.form.get("location"),
+            email=request.form.get("email"),
+            phone=request.form.get("phone"),
+            blinds=request.form.get("blinds")
+        )
         db.session.add(company)
         db.session.commit()
         return redirect(url_for("companies"))
