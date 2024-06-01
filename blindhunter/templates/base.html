@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Blind Hunter</title>
 </head>
-<body>
+
+<body class="bg-image">
     
     <header>
-        <nav>
+        <nav class="blue-grey lighten-5">
             <div class="nav-wrapper">
               <a href="{{ url_for('home') }}" class="brand-logo">Blind Hunter</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
@@ -42,15 +43,15 @@
     {% endwith %}
 
     <main class="container">
-    {% block content %}
-    {% endblock %}
+       {% block content %}
+       {% endblock %}
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer blue-grey lighten-5">
         <div class="footer-copyright">
-          <div class="container">
+          <div class="container blue-grey-text darken-2">
           For educational purposes only
-          <a class="grey-text text-lighten-4 right" href="https://codeinstitute.net" target="blank">&copy; Code Institute</a>
+          <a class="blue-grey-text darken-2 right" href="https://codeinstitute.net" target="blank">&copy; Code Institute</a>
           </div>
         </div>
       </footer>

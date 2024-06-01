@@ -7,3 +7,39 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+  .bg-image {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("/static/images/blind.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  nav li a, footer a, nav .brand-logo {
+    color: #455a64;
+    text-shadow: 0 0 0.8px black;
+  }
+
+  p {
+    color: #d7ccc8;
+    font-size: 18px;
+    text-shadow: 0 0 0.8px black;
+  }
+
+  h3 {
+    text-shadow: 0 0 0.8px black;
+}
+
+.alert {
+  color: red;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 0 1px black;
+}
