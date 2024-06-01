@@ -2,19 +2,19 @@
 {% block content %}
 
 <h3 class="light-blue-text text-darken-4 center-align">Blind Companies</h3>
-
+{% if session.username == 'admin' %}
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_company') }}" class="btn-large light-blue darken-2">
+        <a href="{{ url_for('add_company') }}" class="btn-large green accent-4">
             Add Company <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
-
+{% endif %}
 <div class="row">
     {% for company in companies %}
     <div class="col s12 m6 l3">
-        <div class="card light-blue darken-4 center-align">
+        <div class="card light-blue darken-4 z-depth-5 center-align">
             <div class="card-content white-text">
                 <li>
                     <h3>{{ company.company_name }}</h3>
@@ -24,10 +24,10 @@
                     <p>Phone Number: {{ company.phone }}</p>
                 </li>
             </div>
-            {% if session.role == 'admin' or session.user_id == review.user_id %}
+            {% if session.username == 'admin' %}
             <div class="card-action">
                 <a href="{{ url_for('edit_company', company_id=company.id) }}" class="btn green accent-4">Edit</a>
-                <a href="#modal-{{ company.id }}" class="btn red modal-trigger">Delete</a>
+                <a href="#modal-{{ company.id }}" class="btn red darken-2 modal-trigger">Delete</a>
 
                 <!-- Modal  -->
                 <div id="modal-{{ company.id }}" class="modal">
@@ -36,12 +36,12 @@
                         <p>This action cannot be undone!</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ url_for('delete_company', company_id=company.id) }}" class="btn red">Delete</a>
+                        <a href="{{ url_for('delete_company', company_id=company.id) }}" class="btn red darken-2">Delete</a>
                         <a href="{{ url_for('companies') }}" class="btn green accent-4">Cancel</a>
                     </div>
                 </div>
             </div>
-            % endif %
+            {% endif %}
         </div>
     </div>
     {% endfor %}
