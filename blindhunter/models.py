@@ -5,23 +5,14 @@ class Company(db.Model):
     # schema for the Company model
     id = db.Column(db.Integer, primary_key=True)
     company_name = db.Column(db.String(50), unique=True, nullable=False)
-    details = db.relationship("Detail", backref="company", cascade="all, delete", lazy=True)
+    address = db.Column(db.String(150), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
+    blinds = db.Column(db.String(200), nullable=False)
 
     def __repr__(self):
-        return self.company_name
-
-class Detail(db.Model):
-    # schema for the Details model
-    id = db.Column(db.Integer, primary_key=True)
-    detail_area = db.Column(db.String(25), unique=True, nullable=False)
-    detail_description = db.Column(db.Text, nullable=False)
-    detail_contact = db.Column(db.Integer, nullable=False)
-    company_id = db.Column(db.Integer, db.ForeignKey("company.id", ondelete="CASCADE"), nullable=False)
-
-    def __repr__(self):
-         return "#{0} - Detail: {1} | Contact: {2}".format(
-            self.id, self.detail_area, self.detail_contact
-         )
+         return f"{self.company_name} - {self.address}, {self.location}, {self.email}, {self.phone}, {self.blinds}"
 
 
 class Review(db.Model):
