@@ -24,3 +24,10 @@ class Review(db.Model):
 
     def __repr__(self):
          return f"{self.review_name} - {self.company_id}, {self.date}, {self.description}"
+
+class User(db.Model):
+    # schema for the User model
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(150), nullable=False)
+    role = db.Column(db.String(50), nullable=False)
