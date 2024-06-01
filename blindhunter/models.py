@@ -9,6 +9,7 @@ class Company(db.Model):
     area = db.Column(db.String(150), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     phone = db.Column(db.String(20), nullable=False)
+    reviews = db.relationship("Review", backref="company", cascade="all, delete", lazy=True)
 
     def __repr__(self):
          return f"{self.company_name} - {self.location}, {self.area}, {self.email}, {self.phone}"
@@ -21,6 +22,7 @@ class Review(db.Model):
     company_id = db.Column(db.Integer, db.ForeignKey("company.id", ondelete="CASCADE"), nullable=False)
     date = db.Column(db.Date, nullable=False)
     description = db.Column(db.Text, nullable=False)
+    company_id = db.Column(db.Integer, db.ForeignKey("company.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
          return f"{self.review_name} - {self.company_id}, {self.date}, {self.description}"
