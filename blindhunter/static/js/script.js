@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
       format: "d m, yy",
       i18n: {done: "Select"}
     });
+
+    let selects = document.querySelectorAll('select');
+    M.FormSelect.init(selects);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
