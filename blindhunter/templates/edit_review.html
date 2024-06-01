@@ -6,14 +6,14 @@
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_review', review_id=review.id) }}">
       <div class="row">
-        <div class="input-field col s12 center-align">
+        <div class="input-field col s12">
           <i class="fa-solid fa-file-pen prefix light-blue-text text-darken-4"></i>
             <input id="review_name" name="review_name" minlength="3" maxlength="25" type="text" class="validate" required>
             <label for="review_name">Title</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 center-align">
+        <div class="input-field col s12">
           <i class="fa-solid fa-sign-hanging prefix light-blue-text text-darken-4"></i>
             <select id="company_id" name="company_id" class="validate" required>
               <option value="" disabled selected>Choose Company</option>
@@ -25,14 +25,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 center-align">
+        <div class="input-field col s12">
           <i class="fa-regular fa-calendar prefix light-blue-text text-darken-4"></i>
             <input id="date" name="date" type="text" class="datepicker validate" required>
             <label for="date">Date</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 center-align">
+        <div class="input-field col s12">
           <i class="fa-solid fa-pen prefix light-blue-text text-darken-4"></i>
             <input id="description" name="description" minlength="3" maxlength="25" type="text" class="validate" required>
             <label for="description">Review</label>
@@ -40,7 +40,7 @@
       </div>
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1">
+                <button type="submit" class="btn-large green accent-4">
                     Edit Review <i class="fas fa-edit right"></i>
                 </button>
             </div>
