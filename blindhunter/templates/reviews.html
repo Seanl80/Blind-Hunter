@@ -20,7 +20,7 @@
     <div class="col s12">
         <div class="card horizontal blue-grey darken-4 z-depth-5">
             <div class="card-stacked">
-                <div class="card-content white-text">
+                <div class="card-content">
                     <li>
                         <p>{{  review.company.company_name }}</p>
                         <p></i> {{ review.date }}</p>
@@ -30,7 +30,6 @@
                 </div>
                 <!-- edit delete buttons -->
                 {% if session.get('username') == 'admin' or session.get('username') == review.review_name %}
-                
                 <div class="card-action">
                     <a href="{{ url_for('edit_review', review_id=review.id) }}" class="btn green accent-4 hoverable">Edit</a>
                     <a href="#modal-{{ review.id }}" class="btn red modal-trigger hoverable">Delete</a>
