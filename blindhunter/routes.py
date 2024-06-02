@@ -96,12 +96,12 @@ def edit_review(review_id):
 
 
 
-@app.route('/delete_review/<int:review_id>', methods=['POST'])
+@app.route('/delete_review/<int:review_id>', methods=["GET", "POST"])
 def delete_review(review_id):
     review = Review.query.get_or_404(review_id)
     db.session.delete(review)
     db.session.commit()
-    return redirect('reviews')
+    return redirect(url_for('reviews'))
 
 # register log in/out routes
 @app.route('/register', methods=['GET', 'POST'])
