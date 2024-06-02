@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // datepicker initialization
     let datepicker = document.querySelectorAll('.datepicker');
     M.Datepicker.init(datepicker, {
-      format: "d m, yy",
+      format: "d/m/yy",
       i18n: {done: "Select"}
     });
 // select company in review initialization
