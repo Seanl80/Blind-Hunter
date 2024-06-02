@@ -58,14 +58,16 @@ def delete_company(company_id):
 @app.route("/reviews")
 def reviews():
     reviews = list(Review.query.order_by(desc(Review.date)).all())
+
     return render_template("reviews.html", reviews=reviews)
 
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
+        review_name = session['username']
         review = Review(
-            review_name=request.form.get("review_name"),
+            review_name=review_name,
             company_id=request.form.get("company_id"),
             date=request.form.get("date"),
             description=request.form.get("description"),
@@ -73,7 +75,9 @@ def add_review():
         db.session.add(review)
         db.session.commit()
         return redirect(url_for("reviews"))
-    return render_template("add_review.html")
+
+    companies = list(Company.query.order_by(Company.company_name).all())
+    return render_template("add_review.html", companies=companies)
 
 
 @app.route('/edit_review/<int:review_id>', methods=['GET', 'POST'])
