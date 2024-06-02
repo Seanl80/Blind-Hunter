@@ -8,6 +8,7 @@ body {
     flex: 1 0 auto;
   }
 
+  /* background image */
   .bg-image {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -18,11 +19,13 @@ body {
     background-position: center;
   }
 
+  /* header and footer text */
   nav li a, footer a, nav .brand-logo {
     color: #455a64;
     text-shadow: 0 0 0.8px black;
   }
-
+  
+/* additional styling for text */
   p {
     color: #d7ccc8;
     font-size: 18px;
@@ -33,6 +36,7 @@ body {
     text-shadow: 0 0 0.8px black;
 }
 
+/* flash text */
 .alert {
   color: red;
   padding: 10px 20px;

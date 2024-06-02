@@ -10,7 +10,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def home():
     return render_template("home.html")
 
-
+# company routes
 @app.route("/companies")
 def companies():
     if 'user_id' not in session:
@@ -54,7 +54,7 @@ def delete_company(company_id):
     db.session.commit()
     return redirect(url_for("companies"))
 
-
+# review routes
 @app.route("/reviews")
 def reviews():
     reviews = list(Review.query.order_by(desc(Review.date)).all())
@@ -93,7 +93,7 @@ def delete_review(review_id):
     db.session.commit()
     return redirect('reviews')
 
-
+# register log in/out routes
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':

@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-image">
-    
+  <!-- navbar   -->
     <header>
         <nav class="blue-grey lighten-5">
             <div class="nav-wrapper">
@@ -23,13 +23,14 @@
               </ul>
             </div>
           </nav>
-        
+  <!-- responsive navbar       -->
           <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('companies') }}">Companies</a></li>
             <li><a href="{{ url_for('reviews') }}">Reviews</a></li>
           </ul>
     </header>
+    <!-- flash text dipslay area -->
     {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
             <div class="container col s12 center-align">
@@ -41,12 +42,12 @@
             </div>
         {% endif %}
     {% endwith %}
-
+<!-- main area display -->
     <main class="container">
        {% block content %}
        {% endblock %}
     </main>
-
+<!-- footer -->
     <footer class="page-footer blue-grey lighten-5">
         <div class="footer-copyright">
           <div class="container blue-grey-text darken-2">
