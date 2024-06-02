@@ -47,3 +47,8 @@ body {
   text-align: center;
   text-shadow: 0 0 1px black;
 }
+
+/* remove the dot bug in company cards */
+li {
+  list-style-type: none;
+}
