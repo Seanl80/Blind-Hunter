@@ -18,7 +18,7 @@ class Company(db.Model):
 class Review(db.Model):
     # schema for the Review model
     id = db.Column(db.Integer, primary_key=True)
-    review_name = db.Column(db.String(25), unique=True, nullable=False)
+    review_name = db.Column(db.String(25), nullable=False)
     company_id = db.Column(db.Integer, db.ForeignKey("company.id", ondelete="CASCADE"), nullable=False)
     date = db.Column(db.Date, nullable=False)
     description = db.Column(db.Text, nullable=False)
