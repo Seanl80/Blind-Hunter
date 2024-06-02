@@ -2,6 +2,7 @@
 {% block content %}
 
 <!-- website desciption -->
+<div class="text-box">
 <h3 class=" brown-text lighten-3 center-align">Welcome To Blind Hunter</h3>
 <p>Welcome to Blind Hunter where we have selected all the top rated Blind Companies in the country.
     We have simplified the searching process to take the hassle out for you. We have also teamed up 
@@ -16,17 +17,18 @@
         <i class="fa-solid fa-sterling-sign"></i>
         <i class="fa-solid fa-exclamation"></i></p>
         </div>
-    </div> 
+    </div>
+</div> 
 <div class="row">
     <!-- display if logged in or not -->
     <div class="col s12 center-align">
         {% if session.username %}
         <p>Hello, {{ session.username }}!</p>
-        <a href="{{ url_for('logout') }}" class="btn green accent-4">Sign Out</a>
+        <a href="{{ url_for('logout') }}" class="btn green accent-4 hoverable">Sign Out</a>
         {% else %}   
-        <a href="{{ url_for('register') }}" class="btn green accent-4">
+        <a href="{{ url_for('register') }}" class="btn green accent-4 hoverable">
         Register</a>
-        <a href="{{ url_for('login') }}" class="btn green accent-4">
+        <a href="{{ url_for('login') }}" class="btn green accent-4 hoverable">
         Sign In</a>
         {% endif %}
     </div>
