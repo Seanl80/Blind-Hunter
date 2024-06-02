@@ -84,10 +84,16 @@ def add_review():
 def edit_review(review_id):
     review = Review.query.get_or_404(review_id)
     if request.method == 'POST':
-        review.review_name = request.form.get("review_name")
+        review.review_name = session['username']
+        review.company_id = request.form.get("company_id")
+        review.date = request.form.get("date")
+        review.description = request.form.get("description")
         db.session.commit()
-        return redirect('reviews')
-    return render_template('edit_review.html', review=review)
+        return redirect(url_for('reviews'))
+
+    companies = list(Company.query.order_by(Company.company_name).all())
+    return render_template("edit_review.html", review=review, companies=companies)
+
 
 
 @app.route('/delete_review/<int:review_id>', methods=['POST'])
