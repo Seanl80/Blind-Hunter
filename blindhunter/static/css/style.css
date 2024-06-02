@@ -1,3 +1,4 @@
+/* sticky footer */
 body {
     display: flex;
     min-height: 100vh;
@@ -20,7 +21,7 @@ body {
   }
 
   /* header and footer text */
-  nav li a, footer a, nav .brand-logo {
+  nav li a, footer a, nav .brand-logo, i.fas.fa-bars {
     color: #455a64;
     text-shadow: 0 0 0.8px black;
   }
@@ -34,6 +35,10 @@ body {
 
   h3 {
     text-shadow: 0 0 0.8px black;
+}
+
+form input {
+  color: white;
 }
 
 /* flash text */
@@ -51,4 +56,20 @@ body {
 /* remove the dot bug in company cards */
 li {
   list-style-type: none;
+}
+
+.card.horizontal .card-stacked {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-description { 
+  word-wrap: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.text-box {
+  backdrop-filter: blur(10px);
 }
