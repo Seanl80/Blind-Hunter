@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Log in</h3>
+<div class="text-box">
+<h3 class="brown-text lighten-3 center-align">Log in</h3>
+</div>
 <!-- log in form -->
-<div class="row">
+<div class="row card-panel blue-grey darken-4">
     <div class="col s12 center-align">
         <form method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
-            <button type="submit" class="btn green accent-4">Login</button>
+            <button type="submit" class="btn green accent-4 hoverable">Login</button>
         </form>
     </div>
 </div>
