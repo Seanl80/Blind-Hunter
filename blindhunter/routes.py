@@ -42,6 +42,10 @@ def edit_company(company_id):
     company = Company.query.get_or_404(company_id)
     if request.method == "POST":
         company.company_name = request.form.get("company_name")
+        company.location = request.form.get("location")
+        company.area = request.form.get("area")
+        company.email = request.form.get("email")
+        company.phone = request.form.get("phone")
         db.session.commit()
         return redirect(url_for("companies"))
     return render_template("edit_company.html", company=company)
