@@ -43,7 +43,7 @@ As a user of this quiz, I want:
 
 Here are the original wireframes:
 
-![Home page wireframe](https://github.com/Seanl80/MS3/blob/main/blindhunter/static/wireframes/blind-project-wire-frames.pdf)
+[Home page wireframe](https://github.com/Seanl80/MS3/blob/main/blindhunter/static/wireframes/blind-project-wire-frames.pdf)
 ![Companies page wireframe](static/wireframes/companies-page.png)
 ![Reviews wireframe](static/wireframes/reviews-page.png)
 
