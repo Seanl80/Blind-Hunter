@@ -42,10 +42,12 @@ As a user of this quiz, I want:
 ## Wireframes
 
 Here are the original wireframes:
+I have made the three main pages of the site.
+- Home page consists of an explanation of the site with navigation and log in\register buttons. Once logged in this will change to one log out button.
+- The companies page will consist of square cards showing the different companies with their detials and contact info.
+- The reviews page will show rectangular cards with user, company they are reviewing and their review.
+[Wireframes](https://github.com/Seanl80/MS3/blob/main/blindhunter/static/wireframes/blind-project-wire-frames.pdf)
 
-[Home page wireframe](https://github.com/Seanl80/MS3/blob/main/blindhunter/static/wireframes/blind-project-wire-frames.pdf)
-![Companies page wireframe](static/wireframes/companies-page.png)
-![Reviews wireframe](static/wireframes/reviews-page.png)
 
 ---
 
@@ -88,6 +90,14 @@ I have used these validators to check the validity of my code.
 
 ## Bugs
 
+I did encounter a few bugs. The first was when I made up the company cards I had a dot showing above the company info. This was a list marker which I had to take out using css.
+
+![List marker bug](/static/images/list-marker-bug.png)
+
+When I was making the reviews page I added in a select list to contain all the companies in the companies page. When selecting it I couldn't access them. This was fixed by targeting it more specifically in the code.
+
+![Empty select field](empty-select-field-bug)
+
 ## Deployment
 
 This project was developed using the [Gitpod IDE](https://https://gitpod.io/). Then developments and changes were commited and pushed to GitHub.
@@ -117,11 +127,11 @@ To deploy this page from Heroku, the following steps were taken:
 7. Click 'Create app'.
 8. Go to 'Settings', click 'Reveal Config Vars'.
 9. Add the following variables:
-- DATABASE_URL: your ElephantSQL database url
+- DATABASE_URL: your database url can go here
 - IP: 0.0.0.0
 - PORT: 5000
 - SECRET_KEY: your secret key
-- DEBUG: True
+- DEBUG: False
 10. Click on the 'Deploy' tab.
 11. Click 'Connect to GitHub'.
 12. Find your repo and click 'Connect'
