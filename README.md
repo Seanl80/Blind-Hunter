@@ -24,12 +24,13 @@ As a user of this quiz, I want:
 - To be able to create a new profile.
 - To be able to log back in as myself to leave new reviews and get discounts.
 
+---
+
 ## Design choices
 
 - The basic colour range for this quiz are with the following colours :-
 - ![#ffffff](https://placehold.co/15x15/ffffff/ffffff.png) `#ffffff`
 - ![#455a64](https://placehold.co/15x15/455a64/455a64.png) `#455a64`
-- ![#795548](https://placehold.co/15x15/795548/795548.png) `#795548`
 - ![#00c853](https://placehold.co/15x15/00c853/00c853.png) `#00c853`
 - ![#000000de](https://placehold.co/15x15/000000de/000000de.png) `#000000de`
 - ![#f44336](https://placehold.co/15x15/f44336/f44336.png) `#f44336`
@@ -39,20 +40,16 @@ As a user of this quiz, I want:
 - I chose green and red for button navigation as they are universally recognised.
 - I felt these colours blended well to make an appealling website.
 
+---
+
 ## Wireframes
 
 Here are the original wireframes:
 I have made the three main pages of the site.
 - Home page consists of an explanation of the site with navigation and log in\register buttons. Once logged in this will change to one log out button.
-- The companies page will consist of square cards showing the different companies with their detials and contact info.
+- The companies page will consist of square cards showing the different companies with their details and contact info.
 - The reviews page will show rectangular cards with user, company they are reviewing and their review.
-[Wireframes](https://github.com/Seanl80/MS3/blob/main/blindhunter/static/wireframes/blind-project-wire-frames.pdf)
-
-
----
-
-## Existing features
-
+- [Wireframes](https://github.com/Seanl80/MS3/blob/main/blindhunter/static/wireframes/blind-project-wire-frames.pdf)
 
 ---
 
@@ -82,9 +79,51 @@ I have used these validators to check the validity of my code.
 
 ## Testing Developer Goals
 
+- I would like to build a website which will save the user effort on searching. 
+
+   In this website I have included blind companies and their details as well as area covered to save users time on searching for blind companies in their area. 
+   ![Companies](blindhunter/static/images/companies.png)
+- I would like users to be able to benefit from using the website. 
+
+   I have clearly stated on the front page of this website that users will get 20% off if they email companies through our link. To view companies you must register first. If the companies tab in the nav bar is clicked a flash message will prompt you to sign in or register first.  
+   ![Discount](blindhunter/static/images/discount.png)  
+   ![Discount2](blindhunter/static/images/discount2.png)  
+- I would like to build a website which is easy to use. 
+
+   The easy to see buttons and navigation bar helps users to navigate. Users can view reviews without logging in or registering, but in order to view companies you have to. Flash messages prompt the user into the next step needed to take in order to navigate.   
+   ![Buttons](blindhunter/static/images/buttons.png)  
+   ![Navbarflash](blindhunter/static/images/navbarflash.png)  
+- I would like to make the user able to have their own profile for when they use the website.
+
+   I found the best way of doing this was to show the user the benefits of using this webite on the main page and by allowing them to see user reviews before making a decision about doing so. Also by doing this the user will qualify for the discount and be able to leave a review at the end of the process.  
+   ![Register](blindhunter/static/images/register.png)  
+   ![Profile](blindhunter/static/images/profile.png)  
 
 ## Testing User Stories
 
+As a user of this quiz, I want:
+
+- To be able to easily navigate through the website.  
+    By using flash messages and having visible buttons users have found the layout structure easy to navigate through. By understanding what this website is about.  
+    Reading other users reviews.
+    ![Reviews](blindhunter/static/images/reviews.png)   
+    Registering or logging in to view and contact companies.
+    ![Buttons](blindhunter/static/images/buttons.png)  
+    ![Navbarflash](blindhunter/static/images/navbarflash.png)  
+    Then leaving a review about the service.
+    ![List marker](blindhunter/static/images/list-marker-bug.png)
+- To be able to benefit from using this website.
+    Users are aware they can recieve discount from the home page text with with amount of savings highlighted through a pulse function in Materialize.
+    ![List marker](blindhunter/static/images/list-marker-bug.png)
+- To know what the next steps are to contact companies.
+    Again in the home page text it describes the steps of contacting the companies and howto claim discount in doing so.
+    ![List marker](blindhunter/static/images/list-marker-bug.png)
+- To be able to create a new profile.
+    Users are able to create a profile simply by registering under a name of their choice.
+    ![List marker](blindhunter/static/images/list-marker-bug.png)
+- To be able to log back in as myself to leave new reviews and get discounts.
+    Users are able to log back in using the log in button and they will have access to their old reviews but still able to claim discount by contacting the companies through the website.
+    ![List marker](blindhunter/static/images/list-marker-bug.png)
 
 ---
 
@@ -92,11 +131,11 @@ I have used these validators to check the validity of my code.
 
 I did encounter a few bugs. The first was when I made up the company cards I had a dot showing above the company info. This was a list marker which I had to take out using css.
 
-![List marker bug](/static/images/list-marker-bug.png)
+![List-marker](blindhunter/static/images/list-marker-bug.png)
 
 When I was making the reviews page I added in a select list to contain all the companies in the companies page. When selecting it I couldn't access them. This was fixed by targeting it more specifically in the code.
 
-![Empty select field](empty-select-field-bug)
+![Empty-select-field](blindhunter/static/images/empty-select-field-bug.png)
 
 ## Deployment
 
@@ -156,6 +195,6 @@ My thanks go out to tutors Sarah and John at Code institue for their assistance 
 - For my image I used [Freepik](https://www.freepik.com/).
 - For my favicon image I used [Icon Archive](https://www.iconarchive.com/show/sleek-xp-basic-icons-by-hopstarter/Money-icon.html).
 - To show my website on different screens I used [Am I responsive](https://ui.dev/amiresponsive/) to create them.
-- For my wirefreames I used [Balsamiq](https://balsamiq.com/).
+- For my wireframes I used [Balsamiq](https://balsamiq.com/).
 
 
