@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for, session, flash
 from sqlalchemy import desc
+from sqlalchemy.exc import IntegrityError
 from blindhunter import app, db
 from blindhunter.models import Company, Review, User
 
@@ -31,10 +32,19 @@ def add_company():
             email=request.form.get("email"),
             phone=request.form.get("phone"),
         )
-        db.session.add(company)
-        db.session.commit()
-        return redirect(url_for("companies"))
+        
+        try:
+            db.session.add(company)
+            db.session.commit()
+            flash('Company added successfully!', 'success')
+            return redirect(url_for("companies"))
+        except IntegrityError:
+            db.session.rollback()
+            flash('Companies cannot have matching email or phone numbers', 'danger')
+            return redirect(url_for("add_company"))
+
     return render_template("add_company.html")
+
 
 
 @app.route("/edit_company/<int:company_id>", methods=["GET", "POST"])
@@ -46,8 +56,16 @@ def edit_company(company_id):
         company.area = request.form.get("area")
         company.email = request.form.get("email")
         company.phone = request.form.get("phone")
-        db.session.commit()
-        return redirect(url_for("companies"))
+        
+        try:
+            db.session.commit()
+            flash('Company details updated successfully!', 'success')
+            return redirect(url_for("companies"))
+        except IntegrityError:
+            db.session.rollback()
+            flash('Companies cannot have matching email or phone numbers', 'danger')
+            return redirect(url_for("edit_company", company_id=company_id))
+    
     return render_template("edit_company.html", company=company)
 
 
@@ -151,3 +169,8 @@ def login():
 def logout():
     session.clear()
     return redirect('/')
+
+# displays custom error page with a way back
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
