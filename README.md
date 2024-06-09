@@ -104,26 +104,28 @@ I have used these validators to check the validity of my code.
 As a user of this quiz, I want:
 
 - To be able to easily navigate through the website.  
-    By using flash messages and having visible buttons users have found the layout structure easy to navigate through. By understanding what this website is about.  
+    By using flash messages and having visible buttons users have found the layout structure easy to navigate through.  
+    By understanding what this website is about.  
+    ![Description](blindhunter/static/images/description.png)   
     Reading other users reviews.
     ![Reviews](blindhunter/static/images/reviews.png)   
-    Registering or logging in to view and contact companies.
+    Registering or logging in to view and contact companies.  
     ![Buttons](blindhunter/static/images/buttons.png)  
     ![Navbarflash](blindhunter/static/images/navbarflash.png)  
     Then leaving a review about the service.
-    ![List marker](blindhunter/static/images/list-marker-bug.png)
+    ![Joe review](blindhunter/static/images/joe-review.png)
 - To be able to benefit from using this website.
-    Users are aware they can recieve discount from the home page text with with amount of savings highlighted through a pulse function in Materialize.
-    ![List marker](blindhunter/static/images/list-marker-bug.png)
+    Users are aware they can recieve discount from the home page text with with amount of savings highlighted through a pulse function in Materialize.  
+    ![Discount](blindhunter/static/images/discount.png)
 - To know what the next steps are to contact companies.
-    Again in the home page text it describes the steps of contacting the companies and howto claim discount in doing so.
-    ![List marker](blindhunter/static/images/list-marker-bug.png)
+    Again in the home page text it describes the steps of contacting the companies and how to claim discount in doing so.
+    ![Description](blindhunter/static/images/description.png)
 - To be able to create a new profile.
     Users are able to create a profile simply by registering under a name of their choice.
-    ![List marker](blindhunter/static/images/list-marker-bug.png)
+    ![Register](blindhunter/static/images/register.png)
 - To be able to log back in as myself to leave new reviews and get discounts.
-    Users are able to log back in using the log in button and they will have access to their old reviews but still able to claim discount by contacting the companies through the website.
-    ![List marker](blindhunter/static/images/list-marker-bug.png)
+    Users are able to log back in using the log in button and they will have access to their old reviews but still able to claim discount by contacting the companies through the website.  
+    ![Profile](blindhunter/static/images/profile.png)
 
 ---
 
@@ -136,6 +138,10 @@ I did encounter a few bugs. The first was when I made up the company cards I had
 When I was making the reviews page I added in a select list to contain all the companies in the companies page. When selecting it I couldn't access them. This was fixed by targeting it more specifically in the code.
 
 ![Empty-select-field](blindhunter/static/images/empty-select-field-bug.png)
+
+I also found that although I had planned to use datepicker through Materialize I wanted the date of the review recorded as I found when other than that days date was selected sometimes it would create an error. I tried to get that through datepicker but it seemed like an excessive amount of code just to use it so I disregarded datepicker and used javascript to create clean code.
+
+I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the unique=True from the name and inserted it into the email and phone within the company db. This would throw errors show I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn.t have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
 
 ## Deployment
 
