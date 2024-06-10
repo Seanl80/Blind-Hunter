@@ -42,6 +42,10 @@ form input {
   color: white;
 }
 
+.text-box {
+  backdrop-filter: blur(10px);
+}
+
 /* flash text */
 .alert {
   color: red;
@@ -59,18 +63,6 @@ li {
   list-style-type: none;
 }
 
-.card.horizontal .card-stacked {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.review-description { 
-  word-wrap: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis;
-}
-
-.text-box {
-  backdrop-filter: blur(10px);
+.btn, .btn-large {
+  border-radius: 50px;
 }
