@@ -11,6 +11,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def home():
     return render_template("home.html")
 
+
 # company routes
 @app.route("/companies")
 def companies():
@@ -32,7 +33,7 @@ def add_company():
             email=request.form.get("email"),
             phone=request.form.get("phone"),
         )
-        
+
         try:
             db.session.add(company)
             db.session.commit()
@@ -40,11 +41,10 @@ def add_company():
             return redirect(url_for("companies"))
         except IntegrityError:
             db.session.rollback()
-            flash('Companies cannot have matching email or phone numbers', 'danger')
+            flash('Companies cannot have matching email/phone no.', 'danger')
             return redirect(url_for("add_company"))
 
     return render_template("add_company.html")
-
 
 
 @app.route("/edit_company/<int:company_id>", methods=["GET", "POST"])
@@ -56,16 +56,16 @@ def edit_company(company_id):
         company.area = request.form.get("area")
         company.email = request.form.get("email")
         company.phone = request.form.get("phone")
-        
+
         try:
             db.session.commit()
             flash('Company details updated successfully!', 'success')
             return redirect(url_for("companies"))
         except IntegrityError:
             db.session.rollback()
-            flash('Companies cannot have matching email or phone numbers', 'danger')
+            flash('Companies cannot have matching email/phone no.', 'danger')
             return redirect(url_for("edit_company", company_id=company_id))
-    
+
     return render_template("edit_company.html", company=company)
 
 
@@ -75,6 +75,7 @@ def delete_company(company_id):
     db.session.delete(company)
     db.session.commit()
     return redirect(url_for("companies"))
+
 
 # review routes
 @app.route("/reviews")
@@ -117,13 +118,13 @@ def edit_review(review_id):
     return render_template("edit_review.html", review=review, companies=companies)
 
 
-
 @app.route('/delete_review/<int:review_id>', methods=["GET", "POST"])
 def delete_review(review_id):
     review = Review.query.get_or_404(review_id)
     db.session.delete(review)
     db.session.commit()
     return redirect(url_for('reviews'))
+
 
 # register log in/out routes
 @app.route('/register', methods=['GET', 'POST'])
@@ -135,17 +136,16 @@ def register():
         # Check if the username already exists
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
-            flash('Username already exists. Please choose a different one.', 'danger')
+            flash('Username already exists. Please choose again.', 'danger')
             return redirect(url_for('register'))
 
         hashed_password = generate_password_hash(password, method='sha256')
-        new_user = User(username=username, password=hashed_password)
-        
-        db.session.add(new_user)
-        db.session.commit()
-        
-        flash('Registration successful! Please log in.', 'success')
-        return redirect(url_for('login'))
+
+    new_user = User(username=username, password=hashed_password)
+    db.session.add(new_user)
+    db.session.commit()
+    flash('Registration successful! Please log in.', 'success')
+    return redirect(url_for('login'))
     return render_template('register.html')
 
 
@@ -169,6 +169,7 @@ def login():
 def logout():
     session.clear()
     return redirect('/')
+
 
 # displays custom error page with a way back
 @app.errorhandler(404)
