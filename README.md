@@ -6,6 +6,8 @@
 - I would like users to be able to benefit from using the website.
 - I would like to build a website which is easy to use.
 - I would like to make the user able to have their own profile for when they use the website.
+- To allow users the ability to create, display, edit and delete reviews.
+- To develop a database structure which suits the relationships between database records.
 
 ## User goals
 
@@ -99,6 +101,14 @@ I have used these validators to check the validity of my code.
    ![Register](blindhunter/static/images/register.png)  
    ![Profile](blindhunter/static/images/profile.png)  
 
+- To allow users the ability to create, display, edit and delete reviews.  
+
+    When a user is logged in they have the ability to create a review or to edit and delete all reviews they have created.  
+
+- To develop a database structure which suits the relationships between database records.  
+
+    I have developed this database so that if a review is deleted it will not affect any companies. If a company no longer wants to be associated with us I can delete that company and all associated reviews will then be deleted with it as there would be no point to read a review of a company not with us.
+
 ## Testing User Stories
 
 As a user of this quiz, I want:
@@ -113,13 +123,15 @@ As a user of this quiz, I want:
     ![Buttons](blindhunter/static/images/buttons.png)  
     ![Navbarflash](blindhunter/static/images/navbarflash.png)  
     Then leaving a review about the service.
-    ![Joe review](blindhunter/static/images/joe-review.png)
+    ![Ringo review](blindhunter/static/images/ringo-review.png)
 - To be able to benefit from using this website.
     Users are aware they can recieve discount from the home page text with with amount of savings highlighted through a pulse function in Materialize.  
     ![Discount](blindhunter/static/images/discount.png)
 - To know what the next steps are to contact companies.
-    Again in the home page text it describes the steps of contacting the companies and how to claim discount in doing so.
+    Again in the home page text it describes the steps of contacting the companies and how to claim discount in doing so. Easy link on the companies email will take you email.
     ![Description](blindhunter/static/images/description.png)
+    ![Email](blindhunter/static/images/email.png)
+
 - To be able to create a new profile.
     Users are able to create a profile simply by registering under a name of their choice.
     ![Register](blindhunter/static/images/register.png)
@@ -139,9 +151,9 @@ When I was making the reviews page I added in a select list to contain all the c
 
 ![Empty-select-field](blindhunter/static/images/empty-select-field-bug.png)
 
-I also found that although I had planned to use datepicker through Materialize I wanted the date of the review recorded as I found when other than that days date was selected sometimes it would create an error. I tried to get that through datepicker but it seemed like an excessive amount of code just to use it so I disregarded datepicker and used javascript to create clean code.
+I had planned to use datepicker through Materialize as I wanted the date of the review recorded. I found when other dates were selected sometimes it would create an error. I tried to only allow todays date to be selected through datepicker but it seemed like an excessive amount of code just to use it so I disregarded datepicker and used javascript to create clean code.
 
-I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the unique=True from the name and inserted it into the email and phone within the company db. This would throw errors show I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn.t have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
+I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the unique=True from the name and inserted it into the email and phone within the company db. This would throw errors so I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn't have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
 
 ## Deployment
 
@@ -192,7 +204,7 @@ To deploy this page from Heroku, the following steps were taken:
 
 ### Code
 
-My thanks go out to tutors Sarah and John at Code institue for their assistance in problems.
+My thanks go out to tutors Sarah and John at Code institue for their assistance in problems also to my mentor Harry for support, guidance and problem solving.
 
 
 
