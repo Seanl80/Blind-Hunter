@@ -66,40 +66,28 @@ I have made the three main pages of the site.
 
 ---
 
-## Testing
-
-I have used these validators to check the validity of my code.
-
-- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/)
-
-
-- [W3C Markup Validation](https://validator.w3.org/)
-
-
-- [JShint JavaScript Validation](https://jshint.com/)
-
 
 ## Testing Developer Goals
 
 - I would like to build a website which will save the user effort on searching. 
 
    In this website I have included blind companies and their details as well as area covered to save users time on searching for blind companies in their area. 
-   ![Companies](blindhunter/static/images/companies.png)
+   ![Companies](blindhunter/static/readme-images/companies.png)
 - I would like users to be able to benefit from using the website. 
 
    I have clearly stated on the front page of this website that users will get 20% off if they email companies through our link. To view companies you must register first. If the companies tab in the nav bar is clicked a flash message will prompt you to sign in or register first.  
-   ![Discount](blindhunter/static/images/discount.png)  
-   ![Discount2](blindhunter/static/images/discount2.png)  
+   ![Discount](blindhunter/static/readme-images/discount.png)  
+   ![Discount2](blindhunter/static/readme-images/discount2.png)  
 - I would like to build a website which is easy to use. 
 
    The easy to see buttons and navigation bar helps users to navigate. Users can view reviews without logging in or registering, but in order to view companies you have to. Flash messages prompt the user into the next step needed to take in order to navigate.   
-   ![Buttons](blindhunter/static/images/buttons.png)  
-   ![Navbarflash](blindhunter/static/images/navbarflash.png)  
+   ![Buttons](blindhunter/static/readme-images/buttons.png)  
+   ![Navbarflash](blindhunter/static/readme-images/navbarflash.png)  
 - I would like to make the user able to have their own profile for when they use the website.
 
    I found the best way of doing this was to show the user the benefits of using this webite on the main page and by allowing them to see user reviews before making a decision about doing so. Also by doing this the user will qualify for the discount and be able to leave a review at the end of the process.  
-   ![Register](blindhunter/static/images/register.png)  
-   ![Profile](blindhunter/static/images/profile.png)  
+   ![Register](blindhunter/static/readme-images/register.png)  
+   ![Profile](blindhunter/static/readme-images/profile.png)  
 
 - To allow users the ability to create, display, edit and delete reviews.  
 
@@ -116,28 +104,28 @@ As a user of this quiz, I want:
 - To be able to easily navigate through the website.  
     By using flash messages and having visible buttons users have found the layout structure easy to navigate through.  
     By understanding what this website is about.  
-    ![Description](blindhunter/static/images/description.png)   
+    ![Description](blindhunter/static/readme-images/description.png)   
     Reading other users reviews.
-    ![Reviews](blindhunter/static/images/reviews.png)   
+    ![Reviews](blindhunter/static/readme-images/reviews.png)   
     Registering or logging in to view and contact companies.  
-    ![Buttons](blindhunter/static/images/buttons.png)  
-    ![Navbarflash](blindhunter/static/images/navbarflash.png)  
+    ![Buttons](blindhunter/static/readme-images/buttons.png)  
+    ![Navbarflash](blindhunter/static/readme-images/navbarflash.png)  
     Then leaving a review about the service.
-    ![Ringo review](blindhunter/static/images/ringo-review.png)
+    ![Ringo review](blindhunter/static/readme-images/ringo-review.png)
 - To be able to benefit from using this website.
     Users are aware they can recieve discount from the home page text with with amount of savings highlighted through a pulse function in Materialize.  
-    ![Discount](blindhunter/static/images/discount.png)
+    ![Discount](blindhunter/static/readme-images/discount.png)
 - To know what the next steps are to contact companies.
     Again in the home page text it describes the steps of contacting the companies and how to claim discount in doing so. Easy link on the companies email will take you email.
-    ![Description](blindhunter/static/images/description.png)
-    ![Email](blindhunter/static/images/email.png)
+    ![Description](blindhunter/static/readme-images/description.png)
+    ![Email](blindhunter/static/readme-images/email.png)
 
 - To be able to create a new profile.
     Users are able to create a profile simply by registering under a name of their choice.
-    ![Register](blindhunter/static/images/register.png)
+    ![Register](blindhunter/static/readme-images/register.png)
 - To be able to log back in as myself to leave new reviews and get discounts.
     Users are able to log back in using the log in button and they will have access to their old reviews but still able to claim discount by contacting the companies through the website.  
-    ![Profile](blindhunter/static/images/profile.png)
+    ![Profile](blindhunter/static/readme-images/profile.png)
 
 ---
 
@@ -145,15 +133,15 @@ As a user of this quiz, I want:
 
 I did encounter a few bugs. The first was when I made up the company cards I had a dot showing above the company info. This was a list marker which I had to take out using css.
 
-![List-marker](blindhunter/static/images/list-marker-bug.png)
+![List-marker](blindhunter/static/readme-images/list-marker-bug.png)
 
 When I was making the reviews page I added in a select list to contain all the companies in the companies page. When selecting it I couldn't access them. This was fixed by targeting it more specifically in the code.
 
-![Empty-select-field](blindhunter/static/images/empty-select-field-bug.png)
+![Empty-select-field](blindhunter/static/readme-images/empty-select-field-bug.png)
 
 I had planned to use datepicker through Materialize as I wanted the date of the review recorded. I found when other dates were selected sometimes it would create an error. I tried to only allow todays date to be selected through datepicker but it seemed like an excessive amount of code just to use it so I disregarded datepicker and used javascript to create clean code.
 
-I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the unique=True from the name and inserted it into the email and phone within the company db. This would throw errors so I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn't have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
+I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the `unique=True` from the name and inserted it into the email and phone within the company db. This would throw errors so I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn't have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
 
 ## Deployment
 
