@@ -115,7 +115,11 @@ def edit_review(review_id):
         return redirect(url_for('reviews'))
 
     companies = list(Company.query.order_by(Company.company_name).all())
-    return render_template("edit_review.html", review=review, companies=companies)
+    return render_template(
+        "edit_review.html",
+        review=review,
+        companies=companies
+        )
 
 
 @app.route('/delete_review/<int:review_id>', methods=["GET", "POST"])
