@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // date initialization
-document.addEventListener('DOMContentLoaded', function() {
-    let today = new Date().toISOString().substring(0, 10);
-    document.getElementById('date').value = today;
-});
+let dateInput = document.getElementById('date');
+    if (dateInput) {
+        let today = new Date().toISOString().substring(0, 10);
+        dateInput.value = today;
+    }
 
 // select company in review initialization
 document.addEventListener('DOMContentLoaded', function() {
