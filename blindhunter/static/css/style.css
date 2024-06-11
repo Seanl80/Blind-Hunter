@@ -67,3 +67,9 @@ li {
   border-radius: 50px;
   text-shadow: 1px 1px 1px black;
 }
+
+.modal-content {
+    color: #ff0000;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+}
