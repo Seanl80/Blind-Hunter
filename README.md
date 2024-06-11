@@ -1,5 +1,9 @@
 # Blind Hunter
 
+Blind Hunter is a website that has searched for the top rated blind companies in the Uk. We have teamed up with these companies to offer an additional discount of your price if contact is made through email by a user who is registered with Blind Hunter. We aim to save customers money and time searching.  
+
+![Screenshots on different screen sizes](blindhunter/static/documentation/alt-screen-sizes.png)
+
 ## Developer goals
 
 - I would like to build a website which will save the user effort on searching.
@@ -18,7 +22,7 @@
 
 ## User stories
 
-As a user of this quiz, I want:
+As a user of this website, I want:
 
 - To be able to easily navigate through the website.
 - To be able to benefit from using this website.
@@ -127,6 +131,35 @@ As a user of this quiz, I want:
 - To be able to log back in as myself to leave new reviews and get discounts.
     Users are able to log back in using the log in button and they will have access to their old reviews but still able to claim discount by contacting the companies through the website.  
     ![Profile](blindhunter/static/readme-images/profile.png)
+
+---
+
+## Testing
+
+I have used these validators to check the validity of my code.
+
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/)
+
+- [W3C Markup Validation](https://validator.w3.org/)
+
+- [JShint JavaScript Validation](https://jshint.com/)  
+    
+    In my JavaScript testing it referenced one undefined variable but this is from the Materialize cdn where I have used it for a sticky footer, a select form and a modal initialization.
+
+- [CI Python Linter Validation](https://pep8ci.herokuapp.com/)  
+    ![Routes.py](blindhunter/static/documentation/routes-validation.png)  
+    ![Modals.py](blindhunter/static/documentation/modals-validation.png)  
+
+These are the lighthouse performance results.  
+
+Home page  
+![Home](blindhunter/static/documentation/home-lighthouse.png)  
+
+Companies page  
+![Companies](blindhunter/static/documentation/company-lighthouse.png)  
+
+Review page  
+![Reviews](blindhunter/static/documentation/review-lighthouse.png)
 
 ---
 
