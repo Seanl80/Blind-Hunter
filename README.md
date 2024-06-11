@@ -140,7 +140,7 @@ When I was making the reviews page I added in a select list to contain all the c
 
 ![Empty-select-field](blindhunter/static/readme-images/empty-select-field-bug.png)
 
-I had planned to use datepicker through Materialize as I wanted the date of the review recorded. I found when other dates were selected sometimes it would create an error. I tried to only allow todays date to be selected through datepicker but it seemed like an excessive amount of code just to use it so I disregarded datepicker and used javascript to create clean code.
+I had planned to use datepicker through Materialize as I wanted the date of the review recorded. I found when other dates were selected sometimes it would create an error. I tried to only allow todays date to be selected through datepicker but it seemed like an excessive amount of code just to use it so I disregarded datepicker and used javascript to create clean code. I later had to correct this as I had it as an event listener which made a console error appear as it was only needed in the add_review form.
 
 I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the `unique=True` from the name and inserted it into the email and phone within the company db. This would throw errors so I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn't have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
 
