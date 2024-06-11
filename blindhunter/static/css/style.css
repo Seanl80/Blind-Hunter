@@ -21,7 +21,7 @@ body {
   }
 
   /* header and footer text */
-  nav li a, nav .brand-logo, i.fas.fa-bars {
+  nav li a, footer a, nav .brand-logo, i.fas.fa-bars {
     color: #455a64;
     text-shadow: 0.5px 0.5px 0.5px black;
   }
