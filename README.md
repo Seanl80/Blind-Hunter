@@ -169,7 +169,7 @@ Then follow these steps:
 To deploy this page from Heroku, the following steps were taken:
 
 1. Type pip3 freeze --local > requirements.txt into the Gitpod terminal to create a requirements.txt file.
-2. Type echo web: python app.py > Procfile into the terminal to create a Procfile.
+2. Type echo web: python run.py > Procfile into the terminal to create a Procfile.
 3. Commit and push the changes to GitHub.
 4. Create a Heroku Account and log in.
 5. Click 'New' -> 'Create new app'.
@@ -197,7 +197,7 @@ To deploy this page from Heroku, the following steps were taken:
 
 ### Code
 
-My thanks go out to tutors Sarah and John at Code institue for their assistance in problems also to my mentor Harry for support, guidance and problem solving.
+My thanks go out to tutors Roman, Sarah and John at Code institue for their assistance in problems also to my mentor Harry for support, guidance and problem solving.
 
 
 
