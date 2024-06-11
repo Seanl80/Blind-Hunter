@@ -144,6 +144,10 @@ I had planned to use datepicker through Materialize as I wanted the date of the 
 
 I also realised I could duplicate company details without error. I know some blind companies do share the same or similar names. So I removed the `unique=True` from the name and inserted it into the email and phone within the company db. This would throw errors so I put in a try/except rule into my add_company and edit_company routes to catch this error. I didn't have to do this in my reviews as usernames should be unique and it wouldn't matter if the reviews were the same as long as they were under different usernames.
 
+When testing I noticed at a certain width my company cards went out of alignment.  
+![Alignment](blindhunter/static/readme-images/alignment.png)  
+To correct this I had to change the columns from `s12 m6` to `s12 m12 l6` which wasn't what I had planned but it meant the all stayed the same size.
+
 ## Deployment
 
 This project was developed using the [Gitpod IDE](https://https://gitpod.io/). Then developments and changes were commited and pushed to GitHub.
