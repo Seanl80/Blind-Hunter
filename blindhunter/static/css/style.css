@@ -21,21 +21,21 @@ body {
   }
 
   /* header and footer text */
-  nav li a, footer a, nav .brand-logo, i.fas.fa-bars {
+  nav li a, nav .brand-logo, i.fas.fa-bars {
     color: #455a64;
-    text-shadow: 0 0 0.8px black;
+    text-shadow: 0.5px 0.5px 0.5px black;
   }
   
 /* additional styling for text */
   p {
     color: #d7ccc8;
     font-size: 18px;
-    text-shadow: 0 0 0.8px black;
+    text-shadow: 1px 1px 1px black;
   }
 
   h3 {
     color: #d7ccc8;
-    text-shadow: 0 0 0.8px black;
+    text-shadow: 2px 2px 2px black;
 }
 
 form input {
@@ -65,4 +65,5 @@ li {
 
 .btn, .btn-large {
   border-radius: 50px;
+  text-shadow: 1px 1px 1px black;
 }
