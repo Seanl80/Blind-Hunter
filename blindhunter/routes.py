@@ -144,12 +144,12 @@ def register():
             return redirect(url_for('register'))
 
         hashed_password = generate_password_hash(password, method='sha256')
+        new_user = User(username=username, password=hashed_password)
 
-    new_user = User(username=username, password=hashed_password)
-    db.session.add(new_user)
-    db.session.commit()
-    flash('Registration successful! Please log in.', 'success')
-    return redirect(url_for('login'))
+        db.session.add(new_user)
+        db.session.commit()
+        flash('Registration successful! Please log in.', 'success')
+        return redirect(url_for('login'))
     return render_template('register.html')
 
 
