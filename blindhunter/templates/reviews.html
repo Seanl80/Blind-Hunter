@@ -40,7 +40,7 @@
                     <div id="modal-{{ review.id }}" class="modal">
                         <div class="modal-content">
                             <h4>Are you sure you want to delete this Review?</h4>
-                            <p>This action cannot be undone!</p>
+                            <h5>This action cannot be undone!</h5>
                         </div>
                         <div class="modal-footer">
                             <a href="{{ url_for('delete_review', review_id=review.id) }}" class="btn red darken-2 hoverable">Delete</a>
