@@ -20,13 +20,15 @@
     <div class="col s12 m12 l6">
         <div class="card blue-grey darken-4 z-depth-5 center-align">
             <div class="card-content">
-                <li>
-                    <h3>{{ company.company_name }}</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> {{ company.location }}</p>
-                    <p><i class="fa-solid fa-globe"></i> {{ company.area }}</p>
-                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ company.email }}"> {{ company.email }}</a></p>
-                    <p><i class="fa-solid fa-phone"></i> {{ company.phone }}</p>
-                </li>
+                <ul>
+                    <li>
+                        <h3>{{ company.company_name }}</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> {{ company.location }}</p>
+                        <p><i class="fa-solid fa-globe"></i> {{ company.area }}</p>
+                        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ company.email }}"> {{ company.email }}</a></p>
+                        <p><i class="fa-solid fa-phone"></i> {{ company.phone }}</p>
+                    </li>
+                </ul>
             </div>
              <!-- edit delete buttons -->
             {% if session.username == 'admin' %}

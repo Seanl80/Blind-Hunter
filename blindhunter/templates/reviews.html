@@ -21,12 +21,14 @@
         <div class="card horizontal blue-grey darken-4 z-depth-5">
             <div class="card-stacked">
                 <div class="card-content">
-                    <li>
-                        <p>{{  review.company.company_name }}</p>
-                        <p></i> {{ review.date }}</p>
-                        <p>{{ review.review_name }}</p>
-                        <p class="review-description"> {{ review.description }}</p>
-                    </li>
+                    <ul>
+                        <li>
+                            <p>{{  review.company.company_name }}</p>
+                            <p></i> {{ review.date }}</p>
+                            <p>{{ review.review_name }}</p>
+                            <p class="review-description"> {{ review.description }}</p>
+                        </li>
+                    </ul>
                 </div>
                 <!-- edit delete buttons -->
                 {% if session.get('username') == 'admin' or session.get('username') == review.review_name %}
