@@ -92,6 +92,7 @@ I have made the three main pages of the site.
 - To allow users the ability to create, display, edit and delete reviews.  
 
     When a user is logged in they have the ability to create a review or to edit and delete all reviews they have created.  
+    ![CRUD](blindhunter/static/readme-images/crud.png)   
 
 - To develop a database structure which suits the relationships between database records.  
 
@@ -135,7 +136,7 @@ I did encounter a few bugs. The first was when I made up the company cards I had
 
 ![List-marker](blindhunter/static/readme-images/list-marker-bug.png)
 
-When I was making the reviews page I added in a select list to contain all the companies in the companies page. When selecting it I couldn't access them. This was fixed by targeting it more specifically in the code.
+When I was making the reviews page I added in a select list to contain all the companies in the companies page. When selecting it I couldn't access them. This was fixed by targeting it more specifically in the code by adding both `review=review, companies=companies` into my edit_review function when returning the `render_template`.
 
 ![Empty-select-field](blindhunter/static/readme-images/empty-select-field-bug.png)
 
